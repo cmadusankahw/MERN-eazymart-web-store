@@ -1,12 +1,11 @@
 .footer {
-  display: grid;
-  align-items: center;
-  bottom: 30px;
-  margin-top: 30px;
+  padding-bottom: 30px;
+  padding-top: 20px;
   text-align: center;
+  background-color: #131921;
 }
 
 .footer > p {
   font-size: 14px;
-  color: darkmagenta;
+  color: white;
 }

@@ -3,13 +3,12 @@ import "./Header.css";
 import SearchIcon from "@material-ui/icons/Search";
 import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
 
+import logolq from "../../res/images/logolq.png";
+
 function Header(props) {
   return (
     <div className="header">
-      <img
-        className="header_logo"
-        src="https://storage.googleapis.com/web-hosting-272809.appspot.com/logor.png"
-      />
+      <img className="header_logo" src={logolq} />
 
       <div className="header_search">
         <input className="header_searchInput" type="text" />
