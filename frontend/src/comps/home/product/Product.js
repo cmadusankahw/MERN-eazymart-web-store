@@ -1,23 +1,24 @@
 import React from "react";
 import "./Product.css";
 
-// import test product image
-import hplap from "../../../res/images/products/hplap.jpg";
-
-function Product(props) {
+function Product({ title, image, price, rating }) {
   return (
     <div className="product">
       <div className="product_info">
-        <p>HP Probook i10 (10th Gen)</p>
+        <p>{title}</p>
         <p className="product_price">
           <small>Rs.</small>
-          <strong>19.99</strong>
+          <strong>{price}</strong>
         </p>
         <div className="product_rating">
-          <p>⭐</p>
+          {Array(rating)
+            .fill()
+            .map((_, i) => (
+              <p>⭐</p>
+            ))}
         </div>
       </div>
-      <img src={hplap} alt="" />
+      <img src={image} alt={title} />
       <button> Add to Basket </button>
     </div>
   );
