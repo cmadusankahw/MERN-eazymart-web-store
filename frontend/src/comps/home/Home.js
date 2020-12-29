@@ -1,34 +1,64 @@
-import React from "react";
-import "./Home.css";
-import Product from "./product/Product";
+import React, { useState, useEffect } from "react";
 
+import "./Home.css";
+import db from "../../firebase";
+import Product from "./product/Product";
 import slider from "../../res/images/slider.png";
-// import test product image
-import hplap from "../../res/images/products/hplap.jpg";
 
 function Home(props) {
+  const [products, setProducts] = useState([]);
+
+  // run this when sidebar comp loads (Run once or run agin n again when vars given are changed)
+  useEffect(() => {
+    // getting data from cloud firestore collection
+    db.collection("products").onSnapshot((snapshot) =>
+      setProducts(
+        snapshot.docs.map((doc) => ({
+          id: doc.id,
+          title: doc.data().title,
+          price: doc.data().price,
+          rating: doc.data().rating,
+          image: doc.data().image,
+        }))
+      )
+    );
+  }, []);
+
   return (
     <div className="home">
       <div className="home_container">
         <img className="home_image" src={slider} alt="banner" />
         <div className="home_row">
-          <Product
-            title="Dell Laptop i10"
-            price={189.99}
-            image={hplap}
-            rating={5}
-          />
-          <Product />
+          {products.slice(0, 2).map((product) => (
+            <Product
+              title={product?.title}
+              price={product?.price}
+              image={product?.image}
+              rating={product?.rating}
+            />
+          ))}
         </div>
 
         <div className="home_row">
-          <Product />
-          <Product />
-          <Product />
+          {products.slice(2, 5).map((product) => (
+            <Product
+              title={product?.title}
+              price={product?.price}
+              image={product?.image}
+              rating={product?.rating}
+            />
+          ))}
         </div>
 
         <div className="home_row">
-          <Product />
+          {products.slice(5, 6).map((product) => (
+            <Product
+              title={product?.title}
+              price={product?.price}
+              image={product?.image}
+              rating={product?.rating}
+            />
+          ))}
         </div>
       </div>
     </div>

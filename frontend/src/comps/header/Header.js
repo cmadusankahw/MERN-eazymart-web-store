@@ -8,7 +8,7 @@ import logolq from "../../res/images/logolq.png";
 function Header(props) {
   return (
     <div className="header">
-      <img className="header_logo" src={logolq} />
+      <img className="header_logo" src={logolq} alt="easzymart Logo" />
 
       <div className="header_search">
         <input className="header_searchInput" type="text" />
