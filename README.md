@@ -1,0 +1,3 @@
+# MERN-eazymart-web-store  
+
+Fully functional e-commerce web-store with real-time payments, user authentication, cart-add, and checkout features, build with  React JS and Firebase Database, Cloud Funtions...
