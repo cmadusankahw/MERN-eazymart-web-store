@@ -1,0 +1,12 @@
+.footer {
+  display: grid;
+  align-items: center;
+  bottom: 30px;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.footer > p {
+  font-size: 14px;
+  color: darkmagenta;
+}
