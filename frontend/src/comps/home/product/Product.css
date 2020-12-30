@@ -20,12 +20,13 @@
   margin-bottom: 15px;
 }
 
-.product > button {
+.product_buttons > button {
   background: #f0c14b;
   border: 1px solid;
   margin-top: 10px;
   border-color: #a88734 #9c7e31 #846a29;
   color: #111;
+  padding: 5px;
 }
 
 .product_info {
@@ -41,4 +42,19 @@
 .product_rating {
   padding-top: 5px;
   display: flex;
+}
+
+.product_view {
+  background: #036e57 !important;
+  border-color: #096e4d #155f64 #133c50 !important;
+  margin-right: 10px;
+  border: 1px solid #111;
+  margin-top: 10px;
+  color: #fff;
+  padding: 6px;
+}
+
+.product_buttons {
+  display: flex;
+  align-items: center;
 }

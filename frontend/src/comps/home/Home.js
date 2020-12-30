@@ -31,6 +31,7 @@ function Home(props) {
         <div className="home_row">
           {products.slice(0, 2).map((product) => (
             <Product
+              id={product?.id}
               title={product?.title}
               price={product?.price}
               image={product?.image}

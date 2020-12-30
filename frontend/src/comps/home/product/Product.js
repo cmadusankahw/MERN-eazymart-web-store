@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Product.css";
+import { Link } from "react-router-dom";
 
 // to get values from Data Layer with useStateValue
 import { useStateValue } from "../../../StateProvider";
@@ -8,21 +9,38 @@ function Product({ id, title, image, price, rating }) {
   // basket is the 'state' now
   const [{ basket }, dispatch] = useStateValue();
 
-  const addToBasket = () => {
-    // Dispatch some action with data to the Data Layer
-    dispatch({
-      type: "ADD_TO_BASKET",
-      item: {
-        id: id,
-        title: title,
-        price: price,
-        rating: rating,
-      },
-    });
-  };
+  const [counter, setCounter] = useState(false);
 
-  // test basket
-  // console.log("Basket Items >>>>", basket);
+  const addToBasket = async () => {
+    await basket?.map((item) => {
+      if (item.id === id) {
+        item.count++;
+        setCounter(true);
+      }
+      return basket;
+    });
+
+    // Dispatch some action with data to the Data Layer
+    if (!counter) {
+      dispatch({
+        type: "ADD_TO_BASKET",
+        item: {
+          id: id,
+          title: title,
+          price: price,
+          image: image,
+          rating: rating,
+          count: 1,
+        },
+      });
+      setCounter(true);
+    } else {
+      dispatch({
+        type: "UPDATE_BASKET",
+        basket: basket,
+      });
+    }
+  };
 
   return (
     <div className="product">
@@ -41,7 +59,14 @@ function Product({ id, title, image, price, rating }) {
         </div>
       </div>
       <img src={image} alt={title} />
-      <button onClick={addToBasket}> Add to Basket </button>
+      <div className="product_buttons">
+        <Link to="/product/:">
+          <button className="product_view" onClick={addToBasket}>
+            View Details
+          </button>
+        </Link>
+        <button onClick={addToBasket}> Add to Basket </button>
+      </div>
     </div>
   );
 }

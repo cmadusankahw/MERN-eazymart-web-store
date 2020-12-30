@@ -2,19 +2,10 @@ import React from "react";
 import "./Subtotal.css";
 import CurrencyFormat from "react-currency-format";
 
-// to get values from Data Layer with useStateValue
-import { useStateValue } from "../../../StateProvider";
+// Get basket total functionality
+import { getBasketTotal } from "../../../reducer";
 
-function Subtotal() {
-  const [{ basket }, dispatch] = useStateValue();
-
-  // test
-  const getBasketTotal = (basket) => {
-    let baskettotal = 0;
-    basket.map((item) => (baskettotal += item.price));
-    return baskettotal;
-  };
-
+function Subtotal({ basket }) {
   return (
     <div className="subtotal">
       <CurrencyFormat

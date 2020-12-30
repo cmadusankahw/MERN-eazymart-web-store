@@ -3,7 +3,12 @@ import "./Checkout.css";
 import BasketItem from "./basketitem/BasketItem";
 import Subtotal from "./subtotal/Subtotal";
 
+// to get values from Data Layer with useStateValue
+import { useStateValue } from "../../StateProvider";
+
 function Checkout(props) {
+  const [{ basket }, dispatch] = useStateValue();
+
   return (
     <div className="checkout">
       <div className="checkout_left">
@@ -14,12 +19,14 @@ function Checkout(props) {
         />
         <div>
           <h2 className="checkout_title">Your Shopping Basket</h2>
-          <BasketItem />
+          {basket?.map((basketitem) => (
+            <BasketItem basketitem={basketitem} />
+          ))}
         </div>
       </div>
 
       <div className="checkout_right">
-        <Subtotal />
+        <Subtotal basket={basket} />
       </div>
     </div>
   );
