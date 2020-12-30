@@ -1,7 +1,20 @@
 import React from "react";
 import "./BasketItem.css";
 
+// to get values from Data Layer with useStateValue
+import { useStateValue } from "../../../StateProvider";
+
 function BasketItem({ basketitem }) {
+  const [{ basket }, dispatch] = useStateValue();
+
+  const removeFromBasket = () => {
+    // dispatch item removal code
+    dispatch({
+      type: "REMOVE_FROM_BASKET",
+      id: basketitem.id,
+    });
+  };
+
   return (
     <div className="basketItem">
       <img
@@ -21,7 +34,7 @@ function BasketItem({ basketitem }) {
             {Array(basketitem?.rating)
               .fill()
               .map((_, i) => (
-                <p>⭐</p>
+                <p key={i}>⭐</p>
               ))}
           </div>
           <div className="basketItem_countWrap">
@@ -29,7 +42,7 @@ function BasketItem({ basketitem }) {
           </div>
         </div>
 
-        <button> Remove from Basket </button>
+        <button onClick={removeFromBasket}> Remove from Basket </button>
       </div>
     </div>
   );
