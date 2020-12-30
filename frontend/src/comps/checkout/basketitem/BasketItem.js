@@ -15,6 +15,8 @@ function BasketItem({ basketitem }) {
         <p className="basketItem_price">
           <small>Rs. </small>
           <strong>{basketitem?.price}</strong>
+        </p>
+        <div className="basketItem_ratingCount">
           <div className="basketItem_rating">
             {Array(basketitem?.rating)
               .fill()
@@ -22,9 +24,12 @@ function BasketItem({ basketitem }) {
                 <p>⭐</p>
               ))}
           </div>
-          <p>x {basketitem?.count}</p>
-          <button> Remove from Basket </button>
-        </p>
+          <div className="basketItem_countWrap">
+            <p className="basketItem_count">x {basketitem?.count}</p>
+          </div>
+        </div>
+
+        <button> Remove from Basket </button>
       </div>
     </div>
   );
