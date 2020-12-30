@@ -2,14 +2,16 @@ import React from "react";
 import "./Subtotal.css";
 import CurrencyFormat from "react-currency-format";
 
-function Subtotal(props) {
-  // test
-  const basket = [55, 1468.9, 44, 67];
+// to get values from Data Layer with useStateValue
+import { useStateValue } from "../../../StateProvider";
+
+function Subtotal() {
+  const [{ basket }, dispatch] = useStateValue();
 
   // test
   const getBasketTotal = (basket) => {
     let baskettotal = 0;
-    basket.map((item) => (baskettotal += item));
+    basket.map((item) => (baskettotal += item.price));
     return baskettotal;
   };
 

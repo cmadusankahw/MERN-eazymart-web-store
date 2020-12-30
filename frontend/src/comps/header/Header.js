@@ -9,7 +9,7 @@ import { useStateValue } from "../../StateProvider";
 
 import logolq from "../../res/images/logolq.png";
 
-function Header(props) {
+function Header() {
   const [{ basket }, dispatch] = useStateValue();
 
   return (
