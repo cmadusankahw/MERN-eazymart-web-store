@@ -5,6 +5,7 @@ import Footer from "./comps/footer/Footer";
 import Header from "./comps/header/Header";
 import Home from "./comps/home/Home";
 import Checkout from "./comps/checkout/Checkout";
+import ProductPage from "./comps/productpage/ProductPage";
 
 function App() {
   return (
@@ -14,6 +15,9 @@ function App() {
         <Switch>
           <Route path="/checkout">
             <Checkout />
+          </Route>
+          <Route path="/products/:productId">
+            <ProductPage />
           </Route>
           <Route path="/">
             <Home />

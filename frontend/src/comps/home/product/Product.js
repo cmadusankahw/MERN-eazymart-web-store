@@ -1,6 +1,6 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import "./Product.css";
-import { Link } from "react-router-dom";
 
 // to get values from Data Layer with useStateValue
 import { useStateValue } from "../../../StateProvider";
@@ -42,6 +42,18 @@ function Product({ id, title, image, price, rating }) {
     }
   };
 
+  // pulling the web history with useHistory hook
+  const history = useHistory();
+
+  // function to handle routing logic when selecting an available channel
+  const viewProduct = () => {
+    if (id) {
+      history.push(`/products/${id}`);
+    } else {
+      history.push(title);
+    }
+  };
+
   return (
     <div className="product">
       <div className="product_info">
@@ -60,11 +72,9 @@ function Product({ id, title, image, price, rating }) {
       </div>
       <img src={image} alt={title} />
       <div className="product_buttons">
-        <Link to="/product/:">
-          <button className="product_view" onClick={addToBasket}>
-            View Details
-          </button>
-        </Link>
+        <button className="product_view" onClick={viewProduct}>
+          View Details
+        </button>
         <button onClick={addToBasket}> Add to Basket </button>
       </div>
     </div>
