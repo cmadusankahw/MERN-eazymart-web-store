@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 
 // to get values from Data Layer with useStateValue
 import { useStateValue } from "../../StateProvider";
+import { getBasketCount } from "../../reducer";
 
 import logolq from "../../res/images/logolq.png";
 
@@ -40,7 +41,7 @@ function Header() {
           <div className="header_optionBasket">
             <ShoppingBasketIcon />
             <span className="header_optionLineTwo header_basketCount">
-              {basket?.length}
+              {getBasketCount(basket)}
             </span>
           </div>
         </Link>

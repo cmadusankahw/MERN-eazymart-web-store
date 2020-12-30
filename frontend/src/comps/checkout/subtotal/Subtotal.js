@@ -3,7 +3,7 @@ import "./Subtotal.css";
 import CurrencyFormat from "react-currency-format";
 
 // Get basket total functionality
-import { getBasketTotal } from "../../../reducer";
+import { getBasketTotal, getBasketCount } from "../../../reducer";
 
 function Subtotal({ basket }) {
   return (
@@ -12,7 +12,8 @@ function Subtotal({ basket }) {
         renderText={(value) => (
           <>
             <p>
-              Subtotal ({basket?.length} items): <strong>{` ${value}`}</strong>
+              Subtotal ({getBasketCount(basket)} items):{" "}
+              <strong>{` ${value}`}</strong>
             </p>
             <small className="subtotal_gift">
               {" "}
