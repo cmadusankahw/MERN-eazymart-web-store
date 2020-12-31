@@ -50,7 +50,7 @@
   margin-right: 10px;
   border: 1px solid #111;
   margin-top: 10px;
-  color: #fff;
+  color: #fff !important;
   padding: 6px;
 }
 

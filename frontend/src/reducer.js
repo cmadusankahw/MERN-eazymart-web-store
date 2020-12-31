@@ -1,7 +1,7 @@
 // REACT CONTEXT API
 
-// Initial State (Empy basket array)
-export const initialState = { basket: [] };
+// Initial State
+export const initialState = { basket: [], user: null };
 
 // Building Selectors
 // !!!!!!!!!!!!!!!!!!!!NOTE!!!!!!!!!!!!!!!!!!!!
@@ -44,6 +44,11 @@ const reducer = (state, action) => {
       return {
         ...state,
         basket: newBasket,
+      };
+    case "SET_USER":
+      return {
+        ...state,
+        user: action.user,
       };
     default:
       return state;

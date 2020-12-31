@@ -7,7 +7,7 @@ import Subtotal from "./subtotal/Subtotal";
 import { useStateValue } from "../../StateProvider";
 
 function Checkout(props) {
-  const [{ basket }, dispatch] = useStateValue();
+  const [{ basket, user }, dispatch] = useStateValue();
 
   return (
     <div className="checkout">
@@ -18,6 +18,15 @@ function Checkout(props) {
           alt="random banner"
         />
         <div>
+          <h3 className="checkout_helloUser">
+            Hello{" "}
+            {user
+              ? user?.displayName
+                ? user?.displayName
+                : user?.email
+              : " Guest"}
+            !
+          </h3>
           <h2 className="checkout_title">Your Shopping Basket</h2>
           {basket?.map((basketitem) => (
             <BasketItem basketitem={basketitem} />

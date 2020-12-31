@@ -1,3 +1,4 @@
+import React, { useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import "./App.css";
@@ -7,8 +8,35 @@ import Home from "./comps/home/Home";
 import Checkout from "./comps/checkout/Checkout";
 import ProductPage from "./comps/productpage/ProductPage";
 import Login from "./comps/login/Login";
+import { auth } from "./firebase";
+
+// to get values from Data Layer with useStateValue
+import { useStateValue } from "./StateProvider";
 
 function App() {
+  const [{}, dispatch] = useStateValue();
+
+  useEffect(() => {
+    auth.onAuthStateChanged((authUser) => {
+      // test
+      console.log("THE USER >>>>", authUser);
+
+      if (authUser) {
+        // user has just logged in or/ the user has already logged in
+        dispatch({
+          type: "SET_USER",
+          user: authUser,
+        });
+      } else {
+        // the user has logged out
+        dispatch({
+          type: "SET_USER",
+          user: null,
+        });
+      }
+    });
+  }, []);
+
   return (
     <Router>
       <div className="app">
