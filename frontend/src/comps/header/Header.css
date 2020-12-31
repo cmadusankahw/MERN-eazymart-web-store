@@ -40,8 +40,10 @@
 }
 
 .header_optionLineTwo {
-  font-size: 13px;
-  font-weight: 800;
+  font-size: 13px !important;
+  font-weight: 800 !important;
+  color: #fff;
+  text-decoration: none;
 }
 
 .header_optionBasket {
@@ -66,4 +68,8 @@
   margin-left: 10px;
   margin-right: 10px;
   color: white;
+}
+
+.header_option_hide {
+  display: none;
 }

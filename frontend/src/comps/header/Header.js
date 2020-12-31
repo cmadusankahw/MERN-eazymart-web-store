@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Header.css";
 import SearchIcon from "@material-ui/icons/Search";
 import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
@@ -10,8 +10,17 @@ import { getBasketCount } from "../../reducer";
 
 import logolq from "../../res/images/logolq.png";
 
-function Header() {
+function Header({ isLogin }) {
   const [{ basket }, dispatch] = useStateValue();
+
+  const [hideclass, setHideClass] = useState("");
+
+  // hide login button on login page with useEffect hook
+  useEffect(() => {
+    isLogin
+      ? setHideClass("header_option_hide")
+      : setHideClass("header_option");
+  }, [isLogin]);
 
   return (
     <div className="header">
@@ -25,9 +34,11 @@ function Header() {
       </div>
 
       <div className="header_nav">
-        <div className="header_option">
+        <div className={hideclass}>
           <span className="header_optionLineOne">Hello Guest</span>
-          <span className="header_optionLineTwo">Sign In</span>
+          <Link to="/login">
+            <span className="header_optionLineTwo">Sign In</span>
+          </Link>
         </div>
         <div className="header_option">
           <span className="header_optionLineOne">Returns</span>
