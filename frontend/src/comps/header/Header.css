@@ -8,11 +8,82 @@
   z-index: 100;
 }
 
+.header_subheader {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  background-color: #1b2f49;
+  position: sticky;
+  top: 0;
+  z-index: 0;
+}
+
+.header_subheader > span {
+  padding-left: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 10px;
+  color: #fff;
+  font-weight: 400;
+  font-size: 13px;
+  margin: 5px;
+}
+
+.header_subheader > span {
+  padding-left: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 10px;
+  color: #fff;
+  font-weight: 400;
+  font-size: 13px;
+  margin: 2px;
+}
+
+.header_subheader > span:hover {
+  border: 1px solid #fff;
+  border-radius: 2px;
+}
+
+.header_subheaderDropDown {
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+}
+
+.header_subheaderDropDown > span {
+  margin-left: 3px;
+}
+
+.header_link {
+  display: flex;
+  align-items: center;
+}
+
 .header_logo {
-  width: 75%;
+  width: 60%;
   object-fit: contain;
-  margin: 0 14px;
-  margin-top: 3px;
+  margin-left: 14px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
+.header_location {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  margin-right: 10px;
+  color: white;
+  width: 80px;
+}
+
+.header_location > .header_optionLineOne {
+  margin-left: 20px;
+}
+
+.header_locationIcon > .MuiSvgIcon-root {
+  font-size: 18px;
+  margin-right: 3px;
 }
 
 .header_search {
@@ -20,6 +91,7 @@
   flex: 1;
   align-items: center;
   border-radius: 24px;
+  margin-right: 10px;
 }
 
 .header_searchInput {
@@ -50,6 +122,15 @@
   display: flex;
   align-items: center;
   color: #fff;
+  padding-left: 10px;
+  padding-top: 5px;
+  margin-right: 5px;
+  padding-bottom: 5px;
+}
+
+.header_optionBasket:hover {
+  border: 1px solid rgb(180, 198, 248);
+  border-radius: 2px;
 }
 
 .header_basketCount {
@@ -65,9 +146,16 @@
 .header_option {
   display: flex;
   flex-direction: column;
-  margin-left: 10px;
-  margin-right: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   color: white;
+}
+
+.header_option:hover {
+  border: 1px solid rgb(180, 198, 248);
+  border-radius: 2px;
 }
 
 .header_option_hide {

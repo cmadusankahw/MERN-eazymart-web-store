@@ -22,6 +22,10 @@
   color: #111;
 }
 
+.basketItem_info > button:hover {
+  background: #dda20d;
+}
+
 .basketItem_image {
   object-fit: contain;
   width: 180px;
@@ -60,4 +64,30 @@
 
 .basketItem_price {
   padding-top: 10px;
+}
+
+/* POPUP */
+.popup_content {
+  margin: auto;
+  background: rgb(255, 255, 255);
+  padding: 8px;
+  display: flex;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 3px;
+}
+
+.popup_close {
+  padding: 4px;
+  max-height: 10px;
+  max-width: 20px;
+  background: lightgray;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.popup_image {
+  width: 80px;
+  object-fit: contain;
+  margin-right: 10px;
 }

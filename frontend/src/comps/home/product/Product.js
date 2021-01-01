@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import "./Product.css";
+import Popup from "reactjs-popup";
+import "reactjs-popup/dist/index.css";
 
 // to get values from Data Layer with useStateValue
 import { useStateValue } from "../../../StateProvider";
@@ -10,6 +12,10 @@ function Product({ id, title, image, price, rating }) {
   const [{ basket }, dispatch] = useStateValue();
 
   const [counter, setCounter] = useState(false);
+
+  // handle popups
+  const [open, setOpen] = useState(false);
+  const closeModal = () => setOpen(false);
 
   const addToBasket = async () => {
     await basket?.map((item) => {
@@ -40,6 +46,7 @@ function Product({ id, title, image, price, rating }) {
         basket: basket,
       });
     }
+    setOpen(true);
   };
 
   // pulling the web history with useHistory hook
@@ -75,8 +82,26 @@ function Product({ id, title, image, price, rating }) {
         <button className="product_view" onClick={viewProduct}>
           View Details
         </button>
-        <button onClick={addToBasket}> Add to Basket </button>
+        <button className="product_add" onClick={addToBasket}>
+          Add to Basket
+        </button>
       </div>
+
+      <Popup
+        open={open}
+        onClose={closeModal}
+        position="top left"
+        closeOnDocumentClick
+        role="tooltip"
+      >
+        <div className="popup_content">
+          <img className="popup_image" src={image} alt={title} />
+          <p>One {title}(s) Added to basket!</p>
+          <a className="popup_close" onClick={closeModal}>
+            &times;
+          </a>
+        </div>
+      </Popup>
     </div>
   );
 }

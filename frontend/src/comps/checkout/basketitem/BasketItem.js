@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import "./BasketItem.css";
+import Popup from "reactjs-popup";
+import "reactjs-popup/dist/index.css";
 
 // to get values from Data Layer with useStateValue
 import { useStateValue } from "../../../StateProvider";
@@ -7,7 +9,12 @@ import { useStateValue } from "../../../StateProvider";
 function BasketItem({ basketitem }) {
   const [{ basket }, dispatch] = useStateValue();
 
+  // handle popups
+  const [open, setOpen] = useState(false);
+  const closeModal = async () => setOpen(false);
+
   const removeFromBasket = () => {
+    setOpen(true);
     // dispatch item removal code
     dispatch({
       type: "REMOVE_FROM_BASKET",
@@ -44,6 +51,19 @@ function BasketItem({ basketitem }) {
 
         <button onClick={removeFromBasket}> Remove from Basket </button>
       </div>
+      <Popup open={open} onClose={closeModal} position="top left">
+        <div className="popup_content">
+          <img
+            className="popup_image"
+            src={basketitem?.image}
+            alt={basketitem?.title}
+          />
+          <p>One {basketitem?.title}(s) Removed from Basket!</p>
+          <a className="popup_close" onClick={closeModal}>
+            &times;
+          </a>
+        </div>
+      </Popup>
     </div>
   );
 }
