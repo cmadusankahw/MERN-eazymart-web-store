@@ -50,14 +50,21 @@ Navigate to the project directory, then to `functions` and run,
 
 ### Deploy the project
 
-To deploy, navigate to the `app` Directory and run
+To deploy front-end, navigate to the `app` Directory and run
 
-`firebase deploy`
+`firebase deploy --only hosting`
+
+To deploy back-end, navigate to the `functions` Directory and run
+
+`firebase deploy --only functions`
 
 Note: You may require login to firebase first!
 
 ## Project Screenshots
 
-- Home Page with Product Catalog
-
-![Home Page](screenshots/screenshots_1.png)
+<img src="screenshots/1.png" width="800"/>
+<img src="screenshots/2.png" width="800"/>
+<img src="screenshots/3.png" width="800"/>
+<img src="screenshots/4.png" width="800"/>
+<img src="screenshots/5.png" width="800"/>
+<img src="screenshots/6.png" width="800"/>
