@@ -4,6 +4,7 @@ import CurrencyFormat from "react-currency-format";
 import axios from "../../axios";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import BasketItem from "../checkout/basketitem/BasketItem";
+import db from "../../firebase";
 import "./Payment.css";
 
 // to get values from Data Layer with useStateValue
@@ -48,23 +49,40 @@ function Payment() {
 
   // stripe payment processing
   const handleSubmit = async (event) => {
-    event.preventDefault();
-    setProcessing(true);
+    if (user) {
+      event.preventDefault();
+      setProcessing(true);
 
-    const payload = await stripe
-      .confirmCardPayment(clientSecret, {
-        payment_method: {
-          card: elements.getElement(CardElement),
-        },
-      })
-      .then(({ paymentIntent }) => {
-        // paymentIntent = payment confirmations
-        setSucceeded(true);
-        setError(null);
-        setProcessing(false);
+      const payload = await stripe
+        .confirmCardPayment(clientSecret, {
+          payment_method: {
+            card: elements.getElement(CardElement),
+          },
+        })
+        .then(({ paymentIntent }) => {
+          db.collection("users")
+            .doc(user?.uid)
+            .collection("orders")
+            .doc(paymentIntent.id)
+            .set({
+              basket: basket,
+              amount: paymentIntent.amount,
+              created: paymentIntent.created,
+            });
 
-        history.replace("/orders");
-      });
+          setSucceeded(true);
+          setError(null);
+          setProcessing(false);
+
+          dispatch({
+            type: "EMPTY_BASKET",
+          });
+
+          history.replace("/orders");
+        });
+    } else {
+      alert("Please Sign-in to complete Purchase...");
+    }
   };
 
   // Listen changes in card element

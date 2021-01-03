@@ -1,0 +1,24 @@
+.order {
+  padding: 40px;
+  margin: 20px 0;
+  border: 1px solid lightgray;
+  background-color: white;
+  position: relative;
+}
+
+.order_id {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  color: gray;
+}
+
+.order_id > span {
+  font-size: 15px;
+  margin-right: 5px;
+}
+
+.order_total {
+  font-weight: 500;
+  text-align: right;
+}

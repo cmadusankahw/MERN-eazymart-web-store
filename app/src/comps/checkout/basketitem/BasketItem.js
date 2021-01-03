@@ -6,7 +6,7 @@ import "reactjs-popup/dist/index.css";
 // to get values from Data Layer with useStateValue
 import { useStateValue } from "../../../StateProvider";
 
-function BasketItem({ basketitem }) {
+function BasketItem({ basketitem, hideButton }) {
   const [{ basket }, dispatch] = useStateValue();
 
   // handle popups
@@ -48,8 +48,9 @@ function BasketItem({ basketitem }) {
             <p className="basketItem_count">x {basketitem?.count}</p>
           </div>
         </div>
-
-        <button onClick={removeFromBasket}> Remove from Basket </button>
+        {!hideButton && (
+          <button onClick={removeFromBasket}> Remove from Basket </button>
+        )}
       </div>
       <Popup open={open} onClose={closeModal} position="top left">
         <div className="popup_content">

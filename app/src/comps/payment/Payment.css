@@ -78,10 +78,30 @@
 }
 
 .payment_priceContainer > h3 {
-  font-size: 15px;
-  font-weight: 400;
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 30px;
   margin-bottom: 10px;
 }
 
+.payment_details > form {
+  max-width: 400px;
+  border: 1px solid lightgray;
+  padding: 20px;
+}
+
+.payment_details > h4 {
+  padding-bottom: 20px;
+}
+
 .payment_priceContainer > button {
+  background: #f0c14b;
+  width: 100%;
+  border: 1px solid;
+  border-radius: 2px;
+  margin-top: 10px;
+  height: 30px;
+  font-weight: bolder;
+  border-color: #a88734 #9c7e31 #846a29;
+  color: #111;
 }
