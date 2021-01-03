@@ -4,7 +4,7 @@ import SearchIcon from "@material-ui/icons/Search";
 import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
 import DehazeIcon from "@material-ui/icons/Dehaze";
 import RoomIcon from "@material-ui/icons/Room";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 // to get values from Data Layer with useStateValue
 import { useStateValue } from "../../StateProvider";
@@ -18,6 +18,8 @@ function Header({ isLogin }) {
 
   const [hideclass, setHideClass] = useState("");
 
+  const history = useHistory();
+
   // hide login button on login page with useEffect hook
   useEffect(() => {
     isLogin
@@ -29,6 +31,7 @@ function Header({ isLogin }) {
   const handleAuthentication = () => {
     if (user) {
       auth.signOut();
+      history.push("/");
       alert("You have been Signed Out!");
     }
   };
@@ -69,10 +72,12 @@ function Header({ isLogin }) {
               </span>
             </Link>
           </div>
-          <div className="header_option">
-            <span className="header_optionLineOne">Returns</span>
-            <span className="header_optionLineTwo">& Orders</span>
-          </div>
+          <Link to="/orders">
+            <div className="header_option">
+              <span className="header_optionLineOne">Returns</span>
+              <span className="header_optionLineTwo">& Orders</span>
+            </div>
+          </Link>
           <div className="header_option">
             <span className="header_optionLineOne">Your</span>
             <span className="header_optionLineTwo">Prime</span>
