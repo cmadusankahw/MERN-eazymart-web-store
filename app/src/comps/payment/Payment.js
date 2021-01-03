@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
 import CurrencyFormat from "react-currency-format";
-import axios from "axios";
+import axios from "../../axios";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import BasketItem from "../checkout/basketitem/BasketItem";
 import "./Payment.css";
@@ -85,9 +85,11 @@ function Payment() {
             <h3>Delivery Address</h3>
           </div>
           <div className="payment_address">
-            <p>{user?.email}</p>
-            <br />
-            <textarea disabled rows="4" value={address}></textarea>
+            <div className="payment_addressDetails">
+              {user ? <p>Signed-in as: {user?.email}</p> : ""}
+              <br />
+              <textarea disabled rows="4" value={address}></textarea>
+            </div>
             <button> Update Address </button>
           </div>
         </div>

@@ -16,6 +16,7 @@
 
 .payment_address {
   display: flex;
+  align-items: center;
   flex: 0.7;
 }
 
@@ -23,7 +24,18 @@
   flex: 0.7;
 }
 
-.payment_address > textarea {
+.payment_addressDetails {
+  display: block;
+}
+
+.payment_addressDetails > p {
+  font-size: 14px;
+  color: gray;
+  margin-left: 10px;
+  margin-top: 5px;
+}
+
+.payment_addressDetails > textarea {
   border: none;
   padding: 15px;
   width: 350px;
@@ -39,7 +51,6 @@
   border-radius: 2px;
   height: 30px;
   border: 1px solid;
-  margin-top: 10px;
   border-color: darkgrey;
 }
 
@@ -60,4 +71,17 @@
 
 .payment_details {
   flex: 0.7;
+}
+
+.payment_priceContainer {
+  margin-top: 20px;
+}
+
+.payment_priceContainer > h3 {
+  font-size: 15px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.payment_priceContainer > button {
 }
