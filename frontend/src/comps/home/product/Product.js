@@ -97,7 +97,7 @@ function Product({ id, title, image, price, rating }) {
         <div className="popup_content">
           <img className="popup_image" src={image} alt={title} />
           <p>One {title}(s) Added to basket!</p>
-          <a className="popup_close" onClick={closeModal}>
+          <a href="#" className="popup_close" onClick={closeModal}>
             &times;
           </a>
         </div>

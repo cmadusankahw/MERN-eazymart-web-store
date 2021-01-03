@@ -7,6 +7,7 @@ import Header from "./comps/header/Header";
 import Home from "./comps/home/Home";
 import Checkout from "./comps/checkout/Checkout";
 import ProductPage from "./comps/productpage/ProductPage";
+import Payment from "./comps/payment/Payment";
 import Login from "./comps/login/Login";
 import { auth } from "./firebase";
 
@@ -48,6 +49,10 @@ function App() {
           <Route path="/checkout">
             <Header />
             <Checkout />
+          </Route>
+          <Route path="/payment">
+            <Header />
+            <Payment />
           </Route>
           <Route path="/products/:productId">
             <Header />

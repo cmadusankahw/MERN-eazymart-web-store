@@ -8,7 +8,7 @@ import Subtotal from "./subtotal/Subtotal";
 // to get values from Data Layer with useStateValue
 import { useStateValue } from "../../StateProvider";
 
-function Checkout(props) {
+function Checkout() {
   const [{ basket, user }, dispatch] = useStateValue();
 
   // const ref = React.createRef();

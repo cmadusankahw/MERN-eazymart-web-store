@@ -1,0 +1,36 @@
+.payment_address {
+  display: flex;
+}
+
+.payment_address > textarea {
+  border: none;
+  width: 300px;
+  padding: 15px;
+}
+
+.payment_address > button {
+  border: none;
+  margin-left: 15px;
+}
+
+.payment_address > button {
+  height: 30px;
+  border-radius: 2px;
+  height: 30px;
+  border: 1px solid;
+  margin-top: 10px;
+  border-color: darkgrey;
+}
+
+.payment_address > button:hover {
+  background: rgb(206, 205, 205);
+}
+
+.payment_section {
+  display: flex;
+  padding: 15px;
+}
+
+.payment_title {
+  margin-right: 15px;
+}

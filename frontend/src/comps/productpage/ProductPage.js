@@ -7,7 +7,7 @@ import PlayArrowIcon from "@material-ui/icons/PlayArrow";
 import RoomIcon from "@material-ui/icons/Room";
 import CheckBoxIcon from "@material-ui/icons/CheckBox";
 import LinearProgress from "@material-ui/core/LinearProgress";
-import { makeStyles, withStyles } from "@material-ui/core/styles";
+import { withStyles } from "@material-ui/core/styles";
 import Avatar from "@material-ui/core/Avatar";
 import Chip from "@material-ui/core/Chip";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
