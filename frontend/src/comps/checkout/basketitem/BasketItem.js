@@ -11,7 +11,7 @@ function BasketItem({ basketitem }) {
 
   // handle popups
   const [open, setOpen] = useState(false);
-  const closeModal = async () => setOpen(false);
+  const closeModal = () => setOpen(false);
 
   const removeFromBasket = () => {
     setOpen(true);

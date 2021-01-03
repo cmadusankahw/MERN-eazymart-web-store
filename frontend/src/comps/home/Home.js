@@ -45,6 +45,7 @@ function Home(props) {
           {products.slice(2, 5).map((product) => (
             <Product
               key={product?.id}
+              id={product?.id}
               title={product?.title}
               price={product?.price}
               image={product?.image}
@@ -57,6 +58,7 @@ function Home(props) {
           {products.slice(5, 6).map((product) => (
             <Product
               key={product?.id}
+              id={product?.id}
               title={product?.title}
               price={product?.price}
               image={product?.image}
