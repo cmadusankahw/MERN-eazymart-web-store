@@ -1,6 +1,6 @@
 # Easymart Web store
 
-Fully functional e-commerce web-store with real-time payments, user authentication, cart-add, and checkout features, build with React JS and Firebase Database, Cloud Funtions...
+Fully functional e-commerce web-store with real-time payments processing, user authentication, cart-add, and checkout features, build with React JS and Firebase...
 
 ## Technology Stack
 
@@ -10,6 +10,7 @@ Fully functional e-commerce web-store with real-time payments, user authenticati
 - Firebase Cloud Firestore Database
 - Payment Processing
 - Firebase Hosting
+- Payment Processing with **Stripe.js**
 
 ## Available Scripts
 

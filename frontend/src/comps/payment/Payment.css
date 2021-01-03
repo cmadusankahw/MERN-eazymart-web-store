@@ -1,11 +1,32 @@
+.payment {
+  background-color: white;
+}
+
+.payment_container > h1 {
+  text-align: center;
+  padding: 10px;
+  font-weight: 400;
+  background-color: rgb(215, 223, 223);
+  border-bottom: 1px solid lightgray;
+}
+
+.payment_container > h1 a {
+  text-decoration: none;
+}
+
 .payment_address {
   display: flex;
+  flex: 0.7;
+}
+
+.payment_items {
+  flex: 0.7;
 }
 
 .payment_address > textarea {
   border: none;
-  width: 300px;
   padding: 15px;
+  width: 350px;
 }
 
 .payment_address > button {
@@ -28,9 +49,15 @@
 
 .payment_section {
   display: flex;
-  padding: 15px;
+  padding: 20px;
+  margin: 0 20px;
+  border-bottom: 1px solid lightgray;
 }
 
 .payment_title {
-  margin-right: 15px;
+  flex: 0.3;
+}
+
+.payment_details {
+  flex: 0.7;
 }
