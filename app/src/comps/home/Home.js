@@ -31,6 +31,8 @@ function Home(props) {
         <div className="home_row">
           {products.slice(0, 2).map((product) => (
             <Product
+              key={product?.id}
+              id={product?.id}
               title={product?.title}
               price={product?.price}
               image={product?.image}
@@ -42,6 +44,8 @@ function Home(props) {
         <div className="home_row">
           {products.slice(2, 5).map((product) => (
             <Product
+              key={product?.id}
+              id={product?.id}
               title={product?.title}
               price={product?.price}
               image={product?.image}
@@ -53,6 +57,8 @@ function Home(props) {
         <div className="home_row">
           {products.slice(5, 6).map((product) => (
             <Product
+              key={product?.id}
+              id={product?.id}
               title={product?.title}
               price={product?.price}
               image={product?.image}

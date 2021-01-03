@@ -1,0 +1,87 @@
+.payment {
+  background-color: white;
+}
+
+.payment_container > h1 {
+  text-align: center;
+  padding: 10px;
+  font-weight: 400;
+  background-color: rgb(215, 223, 223);
+  border-bottom: 1px solid lightgray;
+}
+
+.payment_container > h1 a {
+  text-decoration: none;
+}
+
+.payment_address {
+  display: flex;
+  align-items: center;
+  flex: 0.7;
+}
+
+.payment_items {
+  flex: 0.7;
+}
+
+.payment_addressDetails {
+  display: block;
+}
+
+.payment_addressDetails > p {
+  font-size: 14px;
+  color: gray;
+  margin-left: 10px;
+  margin-top: 5px;
+}
+
+.payment_addressDetails > textarea {
+  border: none;
+  padding: 15px;
+  width: 350px;
+}
+
+.payment_address > button {
+  border: none;
+  margin-left: 15px;
+}
+
+.payment_address > button {
+  height: 30px;
+  border-radius: 2px;
+  height: 30px;
+  border: 1px solid;
+  border-color: darkgrey;
+}
+
+.payment_address > button:hover {
+  background: rgb(206, 205, 205);
+}
+
+.payment_section {
+  display: flex;
+  padding: 20px;
+  margin: 0 20px;
+  border-bottom: 1px solid lightgray;
+}
+
+.payment_title {
+  flex: 0.3;
+}
+
+.payment_details {
+  flex: 0.7;
+}
+
+.payment_priceContainer {
+  margin-top: 20px;
+}
+
+.payment_priceContainer > h3 {
+  font-size: 15px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.payment_priceContainer > button {
+}
