@@ -36,7 +36,7 @@ function Login() {
       .then((auth) => {
         history.push(`/`);
         alert(
-          " Successfully Created EazyMart Account! Please Sign-In to continue..."
+          "Successfully Created EazyMart Account!"
         );
       })
       .catch((err) => {

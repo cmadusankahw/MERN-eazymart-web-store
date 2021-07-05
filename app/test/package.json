@@ -1,0 +1,14 @@
+{
+  "name": "evenza_test",
+  "version": "1.0.0",
+  "description": "Selenium testing for evenza",
+  "main": "runner.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Chiran Hewawitharana",
+  "license": "ISC",
+  "dependencies": {
+    "selenium-webdriver": "^4.0.0-beta.4"
+  }
+}
