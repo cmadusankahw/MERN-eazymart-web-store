@@ -163,7 +163,7 @@ function ProductPage(props) {
           <div className="productPage_purchaseCounter">
             <p className="productPage_quantity"> Quantity:</p>
             <div className="productPage_counter">
-              <button
+              <button className="plus_btn"
                 onClick={() => {
                   setCount(count + 1);
                 }}
@@ -176,7 +176,7 @@ function ProductPage(props) {
                 onChange={(e) => setCount(parseInt(e.target.value))}
                 value={count}
               />
-              <button
+              <button className="sub_btn"
                 onClick={() => {
                   return count > 1 ? setCount(count - 1) : null;
                 }}
