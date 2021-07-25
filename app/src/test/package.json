@@ -1,0 +1,23 @@
+{
+  "name": "evenza_test",
+  "version": "1.0.0",
+  "description": "Selenium testing for evenza",
+  "main": "runner.js",
+  "scripts": {
+    "test": "protractor config.js",
+    "run-script": "istanbul report --include=coverage/*.json"
+  },
+  "author": "Chiran Hewawitharana",
+  "license": "ISC",
+  "dependencies": {
+    "protractor-e2e-coverage": "^1.3.0",
+    "protractor-istanbul-plugin": "^2.0.0",
+    "selenium-webdriver": "^4.0.0-beta.4"
+  },
+  "devDependencies": {
+    "grunt": "^1.4.1",
+    "grunt-contrib-jshint": "^3.0.0",
+    "grunt-protractor-coverage": "^0.2.18",
+    "protractor-beautiful-reporter": "^1.3.6"
+  }
+}
