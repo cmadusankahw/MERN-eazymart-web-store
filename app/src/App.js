@@ -12,6 +12,7 @@ import ProductPage from "./comps/productpage/ProductPage";
 import Payment from "./comps/payment/Payment";
 import Orders from "./comps/orders/Orders";
 import Login from "./comps/login/Login";
+import Admin from "./comps/admin/Admin";
 import { auth } from "./firebase";
 
 // to get values from Data Layer with useStateValue
@@ -71,6 +72,10 @@ function App() {
           <Route path="/products/:productId">
             <Header />
             <ProductPage />
+          </Route>
+          <Route path="/admin">
+            <Header />
+            <Admin />
           </Route>
           <Route path="/">
             <Header />
