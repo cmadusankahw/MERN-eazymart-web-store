@@ -4,8 +4,9 @@
   "description": "Selenium testing for evenza",
   "main": "runner.js",
   "scripts": {
-    "test": "protractor config.js",
-    "run-script": "istanbul report --include=coverage/*.json"
+    "test": "nyc protractor config.js",
+    "istanbul-coverage": "istanbul report --include=coverage/*.json",
+    "coverage":"nyc --reporter=lcov --reporter=text-lcov npm test"
   },
   "author": "Chiran Hewawitharana",
   "license": "ISC",
@@ -18,6 +19,7 @@
     "grunt": "^1.4.1",
     "grunt-contrib-jshint": "^3.0.0",
     "grunt-protractor-coverage": "^0.2.18",
+    "nyc": "^15.1.0",
     "protractor-beautiful-reporter": "^1.3.6"
   }
 }
