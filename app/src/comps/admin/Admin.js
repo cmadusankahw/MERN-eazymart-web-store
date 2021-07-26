@@ -68,6 +68,7 @@ function Admin(props) {
         rating: 0,
       }, ...products]
     )
+    alert("Product added successfully!");
   };
 
   return (

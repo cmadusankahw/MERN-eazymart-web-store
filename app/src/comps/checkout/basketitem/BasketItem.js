@@ -49,7 +49,7 @@ function BasketItem({ basketitem, hideButton }) {
           </div>
         </div>
         {!hideButton && (
-          <button onClick={removeFromBasket}> Remove from Basket </button>
+          <button className="basketItem_remove" onClick={removeFromBasket}> Remove from Basket </button>
         )}
       </div>
       <Popup open={open} onClose={closeModal} position="top left">

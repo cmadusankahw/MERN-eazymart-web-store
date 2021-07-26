@@ -17,7 +17,7 @@ describe('Testing "Add to Basket" feature in Product Catalog', function() {
   beforeEach(function() {
     browser.waitForAngularEnabled(false);
     browser.get(base_url+ product_id);
-    // browser.wait(EC.elementToBeClickable(add_to_basket), 10000, 'Elements taking too long to appear in the DOM');
+    browser.executeScript('window.scrollTo(0,0);')  
   });
 
    // Test 01

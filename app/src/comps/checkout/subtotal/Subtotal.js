@@ -16,7 +16,7 @@ function Subtotal({ basket }) {
           <>
             <p>
               Subtotal ({getBasketCount(basket)} items):{" "}
-              <strong>{` ${value}`}</strong>
+              <strong className="basket_total">{` ${value}`}</strong>
             </p>
             <small className="subtotal_gift">
               {" "}
@@ -30,7 +30,7 @@ function Subtotal({ basket }) {
         thousandSeparator={true}
         prefix={"Rs. "}
       />
-      <button onClick={(e) => history.push("/payment")}>
+      <button className="basket_checkout" onClick={(e) => history.push("/payment")}>
         Proceed to Checkout
       </button>
     </div>

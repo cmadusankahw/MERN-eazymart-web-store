@@ -12,6 +12,7 @@ describe('Testing "Add to Cart" feature', function() {
   beforeEach(function() {
     browser.waitForAngularEnabled(false);
     browser.get(base_url);
+    browser.executeScript('window.scrollTo(0,0);')
     browser.wait(EC.elementToBeClickable(add_buttons), 10000, 'Elements taking too long to appear in the DOM');
   });
 
